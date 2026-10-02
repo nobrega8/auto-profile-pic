@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "Auto Profile Pic",
+  "description": "Shows a profile picture next to each message in the list: contact photo, Gravatar or company logo. With your consent, email hashes go to Gravatar and domains to Google/DuckDuckGo.",
+  "version": "1.0.0",
+  "author": "Afonso Nóbrega",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "auto-profile-pic@nobrega.me",
+      "strict_min_version": "128.0",
+      "strict_max_version": "157.*"
+    }
+  },
+  "icons": {
+    "32": "icon.svg",
+    "64": "icon.svg"
+  },
+  "permissions": [
+    "storage",
+    "https://gravatar.com/*",
+    "https://*.gravatar.com/*",
+    "https://www.google.com/*",
+    "https://*.gstatic.com/*",
+    "https://icons.duckduckgo.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "settings.js",
+      "background.js"
+    ]
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  },
+  "experiment_apis": {
+    "profilePics": {
+      "schema": "api/schema.json",
+      "parent": {
+        "scopes": [
+          "addon_parent"
+        ],
+        "paths": [
+          [
+            "profilePics"
+          ]
+        ],
+        "script": "api/implementation.js"
+      }
+    }
+  }
+}

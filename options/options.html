@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Auto Profile Pic</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main>
+    <section>
+      <h2>Privacy</h2>
+      <label class="check">
+        <input type="checkbox" data-setting="remoteConsent" />
+        <span>Download pictures <small>needed for Gravatar and company logos; without it, only address book photos and initials are shown</small></span>
+      </label>
+    </section>
+
+    <section>
+      <h2>Picture sources</h2>
+      <p class="hint">
+        Tried in order. The address book photo always comes first; without any
+        picture, the sender's initial is shown.
+      </p>
+      <label class="check">
+        <input type="checkbox" data-setting="useGravatar" />
+        <span>Gravatar <small>looked up by a hash of the email address</small></span>
+      </label>
+      <label class="check">
+        <input type="checkbox" data-setting="useCompanyLogo" />
+        <span>Company logo <small>the icon of the sender's domain</small></span>
+      </label>
+    </section>
+
+    <section>
+      <h2>Personal email domains</h2>
+      <p class="hint">
+        No company logo for these: the provider's logo says nothing about the
+        sender. One per line.
+      </p>
+      <textarea data-setting="personalDomains" rows="8" spellcheck="false"></textarea>
+      <p><button id="resetDomains" type="button">Restore defaults</button></p>
+    </section>
+
+    <section>
+      <h2>Cache</h2>
+      <p class="hint">
+        Pictures are kept for 30 days (7 days when none is found). Gravatar
+        receives a hash of the email address; Google, or DuckDuckGo as a
+        fallback, receive the domain name.
+      </p>
+      <button id="clearCache" type="button">Clear picture cache</button>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="../settings.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

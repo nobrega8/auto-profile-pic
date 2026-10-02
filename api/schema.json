@@ -1,0 +1,44 @@
+[
+  {
+    "namespace": "profilePics",
+    "functions": [
+      {
+        "name": "init",
+        "type": "function",
+        "async": true,
+        "description": "Starts showing avatars in the message list of all open and future tabs.",
+        "parameters": []
+      },
+      {
+        "name": "setAvatars",
+        "type": "function",
+        "async": true,
+        "description": "Delivers avatars (email -> data URL, or null if none was found).",
+        "parameters": [
+          {
+            "name": "avatars",
+            "type": "object",
+            "additionalProperties": { "type": "any" }
+          }
+        ]
+      },
+      {
+        "name": "clearAvatars",
+        "type": "function",
+        "async": true,
+        "description": "Forgets all known avatars so they are requested again.",
+        "parameters": []
+      }
+    ],
+    "events": [
+      {
+        "name": "onAvatarsNeeded",
+        "type": "function",
+        "description": "Fired when senders without a contact photo and with no known avatar are shown.",
+        "parameters": [
+          { "name": "emails", "type": "array", "items": { "type": "string" } }
+        ]
+      }
+    ]
+  }
+]
