@@ -29,7 +29,7 @@ No message content, names or plain email addresses are sent. Pictures are cached
 1. Download the latest `.xpi` from [Releases](../../releases/latest).
 2. Thunderbird → Tools → Add-ons and Themes → ⚙ → *Install Add-on From File…*
 
-Compatible with Thunderbird 128 – 157. It uses an Experiment API (no built-in API can change the message list), so it is distributed here and not on addons.thunderbird.net, and it may need an update when Thunderbird changes its message list.
+Compatible with Thunderbird 128 – 158. It uses an Experiment API (no built-in API can change the message list), so it is distributed here and not on addons.thunderbird.net, and it may need an update when Thunderbird changes its message list.
 
 Thunderbird only installs unsigned add-ons permanently if `xpinstall.signatures.required` can be set to `false` (ESR/Beta/Daily). Otherwise use *Debug Add-ons → Load Temporary Add-on*.
 
